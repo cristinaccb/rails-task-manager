@@ -1,0 +1,13 @@
+<div class="task-list">
+  <h1 class="fw-bold">My Tasks</h1>
+  <% @tasks.each do |task| %>
+    <div class="task-item">
+      <span><%= task.details %></span>
+      <%= link_to 'Edit', edit_task_path(task), class: "btn btn-sm btn-outline-primary ms-2" %>
+      <%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger ms-2" %>
+    </div>
+  <% end %>
+  <div class="add-task mt-4">
+    <%= link_to 'Add a new task', new_task_path, class: "btn btn-primary" %>
+  </div>
+</div>
